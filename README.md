@@ -7,8 +7,6 @@ This repository contains a proposal for adding a new table, XVAR, to the OpenTyp
 * Iron out font issues late in the design process without introducing intermediate masters. (e.g. your Regular, Bold, Condensed and Bold Condensed look great, but your SemiBold SemiCondensed is not right, so you warp the space to correct, rather than adding an intermediate)
 * Provide a mechanism for introducing synthetic axes - i.e. axes that have no gvar data and are purely derived from a combination of axes with gvar data. E.g. synthesizing an optical size (opsz) axis out of David Berlow's [parametric axes](https://variationsguide.typenetwork.com/proposal/). 
 
-## Status of the proposal
-
 The original XVAR proposal was prepared during the development of the OpenType 1.8 spec that introduced Font Variations. At that time, it was not clear to the people working on the specification how important or necessary the XVAR table would be, so it was postponed from version 1.8 and left as a proposal for future development if a strong case was made.
 
 Since the release of OpenType 1.8 and the creation of several multi-axis variable fonts, we as an industry are learning the limitations of the technology, and discussion continues to return to proposals like XVAR. There are two general themes:
@@ -18,13 +16,15 @@ Since the release of OpenType 1.8 and the creation of several multi-axis variabl
 
 The current proposal answers theme #1 above. It could be easily extended to provide a mechanism for synthetic axes; however, I (@robmck-ms) haven't gotten to that yet. 
 
-I have also been slowly working on prototyping the ideas in this specification to prove the idea. E.g. creating an XVAR variable font without corner masters and comparing that to a normal variable font with corner masters to test the assertion that the masters that a designer would draw for the corners already exist somewhere in the design space of a font without those corner masters (thus, the design space could be warped to so that those instances appear at the corners where they belong). 
+## Status of the proposal
+
+As mentioned above, this proposal was put together during the creation of the OpenType 1.8 spec. It has not been implemented in code; however, and thus has not been proven to be viable yet. Before this is incorporated in OpenType, it must be proven by an implementation that tests not only its functionality does what we intend, but works in a way that is performant, easy to understand and extend, etc. 
+
+I have been slowly working on prototyping the ideas in this specification to prove the idea. E.g. creating an XVAR variable font without corner masters and comparing that to a normal variable font with corner masters to test the assertion that the masters that a designer would draw for the corners already exist somewhere in the design space of a font without those corner masters (thus, the design space could be warped to so that those instances appear at the corners where they belong). 
 
 My intention is to keep working through the issues in the specification and to prototype the ideas in it. However, adoption of variable fonts in their current form (OpenType 1.8.3) is a higher priority, so I will only be able to advance XVAR as time permits. Even with prototype fonts and conceptual models, the spec really needs prototype code implementations in rasterizers to truly validate the implementation.
 
 ## Overview of the proposal
-
-[The following is an excerpt from email conversations on XVAR]
 
 ### Quick summary
 
