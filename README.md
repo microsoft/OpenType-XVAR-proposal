@@ -52,7 +52,7 @@ It’s also theoretically true that you could redraw the outlines to be better. 
 
 We can also look at some examples. If you look at [this specimen I created on axis-praxis](http://www.axis-praxis.org/specimens/_BngLqRhtAG), (see image below), you can see several fonts that, when you compare one width against another, both at the same wght, the overall color differs. Sometimes the condensed is lighter, sometimes heavier. 
 
-![Multiaxis issues](C:\Users\robmck\git\me\OpenType-XVAR-proposal\images\Multiaxis-issues.png) 
+![Multiaxis issues](images/Multiaxis-issues.png) 
 
 Here's a related problem: gvar is additive. If you build regular, bold, and condensed masters, and let bold condensed be purely interpolated (i.e. no “corner master”), then it will be far darker than your bold, and narrower than your condensed. You’ll have the same problem, but in the other direction for light expanded. 
 
