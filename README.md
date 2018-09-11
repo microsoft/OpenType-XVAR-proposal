@@ -100,6 +100,10 @@ One example of where a synthetic axis could be useful is to synthesize an optica
 
 Conceptually, XVAR simply needs to be extended so you map N axes to N+M axes, where M is the number of synthetic axes with no gvar data. This hasn't yet been done or implemented yet.
 
+All that said, in his [presentation at TypeParis 2018](https://youtu.be/S28HV5LYLwQ?t=1h1m58s), David Berlow pointed out a problem with synthetic axes. In his parametric system, XTRA, YTLC, XOPQ, and YOPQ axis coordinates are objective measures of stem or counter weights per mille of UPM*. They actually measure something tangible in the font. You could build a synthetic axis optical size (opsz) axis out of these. For your 12pt opsz, you'd have a specific set of values of the parametric axes for that size, and for 24pt, you'd have a different set of values. Here's the trouble: if you start with that 12pt, then change only the coordinate of opsz to 24pt, you'll get the right rendering, but the coordinates for the parametric axes will be the same (because we didn't change them). Thus, the value of those parametric axes will not be accurate to the outlines (because within the font in ZVAR, they've been remapped), thus these objective measures are now relative measures without an explicit reference outside the font to what they are relative to. 
+
+*Well, they're mostly objective: they are a ratio of font units of stem / UPM, per mille, but which stem they measure is left to the designer. For one designer, it may be the cap O stem; another might use cap H; another might use म. The choice of which stem to use is not part of the parametric axes definition. So, the coordinates are objective within a design framework in which designers use the same stem reference within the font, but relative between design frameworks and also with how each designer implements the reference across the typeface (e.g. if the reference is a vertical stem of cap H, how a particular designer chooses the stem weight for corresponding stems in curved forms like cap O). 
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
