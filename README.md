@@ -1,6 +1,6 @@
 # Introduction
 
-This repository contains a proposal for adding a new table, XVAR, to the OpenType specification for variable fonts. This table extends the concepts of the avar table to enable the font designer to warp the external design space of a variable font using multiple axes as part of the mapping. (The avar table can warp the design space, but treats each axis independently. See [The Problem](#The_Problem), below). This multivariable warping can provide several benefits (see also [detailed benefits](#The_Benefits)):
+This repository contains a draft proposal for adding a new table, XVAR, to the OpenType specification for variable fonts. This table extends the concepts of the avar table to enable the font designer to warp the external design space of a variable font using multiple axes as part of the mapping. (The avar table can warp the design space, but treats each axis independently. See [The Problem](#The_Problem), below). This multivariable warping can provide several benefits (see also [detailed benefits](#The_Benefits)):
 
 * Reduce file size by reducing the number of required masters (e.g. eliminate corner masters).
 * Limit the external design space to ranges that provide good results (e.g. avoid the "Thar be dragons" areas that Petr von Blokland has mentioned in his presentations).
@@ -16,9 +16,9 @@ Since the release of OpenType 1.8 and the creation of several multi-axis variabl
 
 The current proposal answers theme #1 above. It could be easily extended to provide a mechanism for synthetic axes; however, I (@robmck-ms) haven't gotten to that yet. 
 
-## Status of the proposal
+## Status of the draft proposal
 
-As mentioned above, this proposal was put together during the creation of the OpenType 1.8 spec. It has not been implemented in code; however, and thus has not been proven to be viable yet. Before this is incorporated in OpenType, it must be proven by an implementation that tests not only its functionality does what we intend, but works in a way that is performant, easy to understand and extend, etc. 
+As mentioned above, this proposal was put together during the creation of the OpenType 1.8 spec. It has not been implemented in code; however, and thus has not been proven to be viable yet. It is merely a draft proposal and and has not been finalized. Before it is finalized, it must be proven by an implementation that tests not only its functionality does what we intend, but works in a way that is performant, easy to understand and extend, etc. 
 
 I have been slowly working on prototyping the ideas in this specification to prove the idea. E.g. creating an XVAR variable font without corner masters and comparing that to a normal variable font with corner masters to test the assertion that the masters that a designer would draw for the corners already exist somewhere in the design space of a font without those corner masters (thus, the design space could be warped to so that those instances appear at the corners where they belong). 
 
