@@ -18,11 +18,17 @@ The current proposal answers theme #1 above. It could be easily extended to prov
 
 ## Status of the draft proposal
 
+### Background
+
 As mentioned above, this proposal was put together during the creation of the OpenType 1.8 spec. It has not been implemented in code; however, and thus has not been proven to be viable yet. It is merely a draft proposal and and has not been finalized. Before it is finalized, it must be proven by an implementation that tests not only its functionality does what we intend, but works in a way that is performant, easy to understand and extend, etc. 
 
-I have been slowly working on prototyping the ideas in this specification to prove the idea. E.g. creating an XVAR variable font without corner masters and comparing that to a normal variable font with corner masters to test the assertion that the masters that a designer would draw for the corners already exist somewhere in the design space of a font without those corner masters (thus, the design space could be warped to so that those instances appear at the corners where they belong). 
+I have been slowly working on prototyping the ideas in this specification to prove the idea. My intention is to keep working through the issues in the specification and to prototype the ideas in it. However, adoption of variable fonts in their current form (OpenType 1.8.3) is a higher priority, so I will only be able to advance XVAR as time permits. Even with prototype fonts and conceptual models, the spec really needs prototype code implementations in rasterizers to truly validate the implementation.
 
-My intention is to keep working through the issues in the specification and to prototype the ideas in it. However, adoption of variable fonts in their current form (OpenType 1.8.3) is a higher priority, so I will only be able to advance XVAR as time permits. Even with prototype fonts and conceptual models, the spec really needs prototype code implementations in rasterizers to truly validate the implementation.
+### Problem: it won't work
+
+As part of this investigation, a mathematician in our group took a look at the proposal and has concluded that it is problematic. First, the proposal increases the level of interdependence between axes, which, when combined with already mutually dependent axes like weight, width, and optical size, could easily create regions that are even more tangled than without XVAR. Second, XVAR could add non-linearities and regions of instability. Thus, XVAR may cause more problems than it solves. 
+
+We're hoping to write this all up more clearly, but as mentioned in the previous section, advancing variable fonts in their current form is a higher priority. 
 
 ## Overview of the proposal
 
