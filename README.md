@@ -24,7 +24,7 @@ As mentioned above, this proposal was put together during the creation of the Op
 
 I have been slowly working on prototyping the ideas in this specification to prove the idea. My intention is to keep working through the issues in the specification and to prototype the ideas in it. However, adoption of variable fonts in their current form (OpenType 1.8.3) is a higher priority, so I will only be able to advance XVAR as time permits. Even with prototype fonts and conceptual models, the spec really needs prototype code implementations in rasterizers to truly validate the implementation.
 
-### Problem: it won't work
+### Problem: it may not work
 
 As part of this investigation, a mathematician in our group took a look at the proposal and has concluded that it is problematic. First, the proposal increases the level of interdependence between axes, which, when combined with already mutually dependent axes like weight, width, and optical size, could easily create regions that are even more tangled than without XVAR. Second, XVAR could add non-linearities and regions of instability. Thus, XVAR may cause more problems than it solves. 
 
