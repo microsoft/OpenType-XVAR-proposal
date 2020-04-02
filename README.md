@@ -1,6 +1,6 @@
 # Introduction
 
-This repository contains a draft proposal for adding a new table, XVAR, to the OpenType specification for variable fonts. This table extends the concepts of the avar table to enable the font designer to warp the external design space of a variable font using multiple axes as part of the mapping. (The avar table can warp the design space, but treats each axis independently. See [The Problem](#The_Problem), below). This multivariable warping can provide several benefits (see also [detailed benefits](#The_Benefits)):
+This repository contains a draft proposal for adding a new table, XVAR, to the OpenType specification for variable fonts. This table extends the concepts of the avar table to enable the font designer to warp the external design space of a variable font using multiple axes as part of the mapping. (The avar table can warp the design space, but treats each axis independently. See [The Problem](#the-problem), below). This multivariable warping can provide several benefits (see also [detailed benefits](#the-benefits)):
 
 * Reduce file size by reducing the number of required masters (e.g. eliminate corner masters).
 * Limit the external design space to ranges that provide good results (e.g. avoid the "Thar be dragons" areas that Petr von Blokland has mentioned in his presentations).
